@@ -2,17 +2,47 @@
   <div class="Root">
     <div id="wraper">
         <div class="but but1">
-          <select class="js-example-basic-single" style="height: 100%!important" name="MAKE">
-            <option value="AL">Alabama</option>
+          <select class="js-example-basic-single" name="MAKE">
+            <option value="AL">MAKE</option>
             ...
             <option value="WY">Wyoming</option>
           </select>
         </div>
-        <div class="but but2">MODEL</div>
-        <div class="but but3">BODY TYPE</div>
-        <div class="but but4">PRICE</div>
-        <div class="but but5">YEAR</div>
-        <div class="but but6">LOCATION</div>
+        <div class="but but2">
+          <select class="js-example-basic-single" name="MODEL">
+            <option value="AL">MODEL</option>
+            ...
+            <option value="WY">Wyoming</option>
+          </select>
+        </div>
+        <div class="but but3">
+          <select class="js-example-basic-single" name="BODY_TYPE">
+            <option value="AL">BODY TYPE</option>
+            ...
+            <option value="WY">Wyoming</option>
+          </select>
+        </div>
+        <div class="but but4">
+          <select class="js-example-basic-single" name="PRICE">
+            <option value="AL">PRICE</option>
+            ...
+            <option value="WY">Wyoming</option>
+          </select>
+        </div>
+        <div class="but but5">
+          <select class="js-example-basic-single" name="YEAR">
+            <option value="AL">YEAR</option>
+            ...
+            <option value="WY">Wyoming</option>
+          </select>
+        </div>
+        <div class="but but6">
+          <select class="js-example-basic-single" name="LOCATION">
+            <option value="AL">LOCATION</option>
+            ...
+            <option value="WY">Wyoming</option>
+          </select>
+        </div>
         <div class="but but7">SEARCH</div>
       </div>
   </div>
@@ -26,6 +56,36 @@ export default {
 .but select{
   height: 100%!important;
 }
+.but1 .select2-selection--single{
+  border-top-right-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
+  border-top-left-radius: 5px !important;
+  border-bottom-left-radius: 5px !important;
+  border-color: rgb(221, 221, 221);
+  border-right-width: 0px;
+}
+.but2 .select2-selection--single,.but3 .select2-selection--single,.but4 .select2-selection--single,
+.but5 .select2-selection--single,.but6 .select2-selection--single{
+  border-top-right-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
+  border-top-left-radius: 0px !important;
+  border-bottom-left-radius: 0px !important;
+  border-color: rgb(221, 221, 221);
+  border-right-width: 0px;
+}
+.but .select2-container--default{
+  width: 100%;
+  height: 100%;
+  margin-top: -2px;
+  text-align: left;
+}
+.but .select2-selection--single{
+  height: 100%;
+  padding: 21px 10px;
+}
+.but .select2-selection__arrow{
+  padding: 21px 10px;
+}
 </style>
 <style lang="css" scoped>
 #wraper{
@@ -35,8 +95,6 @@ export default {
   grid-auto-rows: 70px;
   margin: 40px auto;
   width:90%;
-  border: 1px solid #777;
-  border-radius: 5px;
   overflow-y: hidden;
 }
 .but{
