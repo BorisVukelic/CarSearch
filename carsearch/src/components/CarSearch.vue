@@ -151,21 +151,43 @@ export default {
 .select2-container--default .select2-selection--single .select2-selection__arrow b,
 .pseudo-selection-arrow b
 {
-  -webkit-transition: transform .25s ease;
-  -moz-transition: transform .25s ease;
-  -o-transition: transform .25s ease;
-  transition: transform .25s ease
+  -webkit-transition: transform 2s ease;
+  -moz-transition: transform 2s ease;
+  -o-transition: transform 2s ease;
+  transition: transform 2s ease
 }
 .select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b,
 .collapsible-header.active .pseudo-selection-arrow b
 {
-  -webkit-transform: rotate(180deg);
-  transform: rotate(180deg);
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+.select2-container--default .select2-results__option--highlighted[aria-selected] {
+  background-color: #f0f2f5;
+  border-bottom-color: #f0f2f5;
+  color: #555;
+}
+.select2-results__options li {
+  font-size: 13px;
+  border-bottom: 1px solid #f0f2f5
+}
+.select2-dropdown{
+  border: 1px solid #ddd;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.select2.select2-container.select2-container--default.select2-container--below.select2-container--open.select2-container--focus{
+  border-bottom: 1px solid #aaa !important;
 }
 </style>
 <style lang="css" scoped>
 :focus {
     outline:none;
+}
+.select2-container--default .select2-results__option--highlighted[aria-selected] {
+  background-color: #f0f2f5;
+  border-bottom-color: #f0f2f5;
+  color: #555;
 }
 #wraper{
   display: grid;
