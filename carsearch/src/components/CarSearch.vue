@@ -148,8 +148,25 @@ export default {
 .select2-container--default .select2-results>.select2-results__options{
   max-height: 175px;
 }
+.select2-container--default .select2-selection--single .select2-selection__arrow b,
+.pseudo-selection-arrow b
+{
+  -webkit-transition: transform .25s ease;
+  -moz-transition: transform .25s ease;
+  -o-transition: transform .25s ease;
+  transition: transform .25s ease
+}
+.select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b,
+.collapsible-header.active .pseudo-selection-arrow b
+{
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
 </style>
 <style lang="css" scoped>
+:focus {
+    outline:none;
+}
 #wraper{
   display: grid;
   margin-top: 40px;
