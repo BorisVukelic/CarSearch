@@ -3,53 +3,61 @@
     <div id="wraper">
         <div class="but but1">
           <select class="js-example-basic-single" name="MAKE">
-            <option value="AL">MAKE</option>
-            ...
-            <option value="WY">Wyoming</option>
+            <option></option>
+            <option>Any</option>
+            <option value="Toyota">Toyota</option>
+            <option value="Nissan">Nissan</option>
+            <option value="Mazda">Mazda</option>
+            <option value="Honda">Honda</option>
+            <option value="Ford">Ford</option>
+            <option value="Bmw">Bmw</option>
+            <option value="Subaru">Subaru</option>
           </select>
         </div>
         <div class="but but2">
           <select class="js-example-basic-single" name="MODEL">
             <option value="AL">MODEL</option>
-            ...
             <option value="WY">Wyoming</option>
           </select>
         </div>
         <div class="but but3">
           <select class="js-example-basic-single" name="BODY_TYPE">
             <option value="AL">BODY TYPE</option>
-            ...
             <option value="WY">Wyoming</option>
           </select>
         </div>
         <div class="but but4">
           <select class="js-example-basic-single" name="PRICE">
             <option value="AL">PRICE</option>
-            ...
             <option value="WY">Wyoming</option>
           </select>
         </div>
         <div class="but but5">
           <select class="js-example-basic-single" name="YEAR">
             <option value="AL">YEAR</option>
-            ...
             <option value="WY">Wyoming</option>
           </select>
         </div>
         <div class="but but6">
           <select class="js-example-basic-single" name="LOCATION">
             <option value="AL">LOCATION</option>
-            ...
             <option value="WY">Wyoming</option>
           </select>
         </div>
-        <div class="but but7">SEARCH</div>
+        <div class="but but7">
+          <button type="button" class="searchButton" name="SEARCH">SEARCH</button>
+        </div>
       </div>
   </div>
 </template>
 
 <script>
 export default {
+  methods:{
+    backToDefault:function(){
+      console.log('aaaa');
+    }
+  }
 }
 </script>
 <style media="screen">
@@ -57,19 +65,19 @@ export default {
   height: 100%!important;
 }
 .but1 .select2-selection--single{
-  border-top-right-radius: 0px !important;
-  border-bottom-right-radius: 0px !important;
-  border-top-left-radius: 5px !important;
-  border-bottom-left-radius: 5px !important;
+  border-top-right-radius: 0px ;
+  border-bottom-right-radius: 0px ;
+  border-top-left-radius: 5px ;
+  border-bottom-left-radius: 5px ;
   border-color: rgb(221, 221, 221);
   border-right-width: 0px;
 }
 .but2 .select2-selection--single,.but3 .select2-selection--single,.but4 .select2-selection--single,
 .but5 .select2-selection--single,.but6 .select2-selection--single{
-  border-top-right-radius: 0px !important;
-  border-bottom-right-radius: 0px !important;
-  border-top-left-radius: 0px !important;
-  border-bottom-left-radius: 0px !important;
+  border-top-right-radius: 0px ;
+  border-bottom-right-radius: 0px ;
+  border-top-left-radius: 0px ;
+  border-bottom-left-radius: 0px ;
   border-color: rgb(221, 221, 221);
   border-right-width: 0px;
 }
@@ -86,6 +94,60 @@ export default {
 .but .select2-selection__arrow{
   padding: 21px 10px;
 }
+.searchButton{
+  width: 100%;
+  height: 100%;
+  color: white;
+  background-color: rgb(243, 0, 95);
+  border-top-right-radius: 5px ;
+  border-bottom-right-radius: 5px ;
+  border-top-left-radius: 0px ;
+  border-bottom-left-radius: 0px ;
+  border:0px solid white;
+  padding-top: 2px;
+}
+@media only screen and (max-width: 1110px){
+  .but1 .select2-selection--single{
+    border-bottom: 0px solid white;
+    border-bottom-left-radius: 0px;
+  }
+  .but5 .select2-selection--single{
+    border-bottom-left-radius: 5px;
+  }
+  .but2 .select2-selection--single,.but3 .select2-selection--single{
+    border-bottom: 0px solid white;
+  }
+  .but4 .select2-selection--single{
+    border-right-width: 1px ;
+    border-bottom-width: 0px;
+    border-top-right-radius: 5px;
+  }
+  .searchButton{
+    border-top-right-radius: 0px ;
+  }
+}
+@media only screen and (max-width: 798px){
+  .but1 .select2-selection--single{
+    border-top-right-radius: 5px;
+    border-right-width: 1px;
+  }
+  .but2 .select2-selection--single,.but3 .select2-selection--single,.but4 .select2-selection--single,
+  .but5 .select2-selection--single,.but6 .select2-selection--single{
+    border-top-right-radius: 0px ;
+    border-bottom-right-radius: 0px ;
+    border-top-left-radius: 0px ;
+    border-bottom-left-radius: 0px ;
+    border-color: rgb(221, 221, 221);
+    border-right-width: 1px;
+    border-bottom-width: 0px;
+  }
+  .searchButton{
+    border-bottom-left-radius: 5px ;
+  }
+}
+.select2-container--default .select2-results>.select2-results__options{
+  max-height: 175px;
+}
 </style>
 <style lang="css" scoped>
 #wraper{
@@ -96,6 +158,7 @@ export default {
   margin: 40px auto;
   width:90%;
   overflow-y: hidden;
+  box-shadow:rgb(240, 240, 240) 0px 0px 13px 0px;
 }
 .but{
   text-align: center;
@@ -148,8 +211,9 @@ export default {
   grid-column: 42/56 ;
 }
 #wraper{
-  width:790px;
+  width:780px;
 }
+
 }
 
 @media only screen and (max-width: 798px){
