@@ -4,7 +4,7 @@
         <div class="but but1">
           <select class="js-example-basic-single" name="MAKE">
             <option></option>
-            <option>Any</option>
+            <option>MAKE</option>
             <option value="Toyota">Toyota</option>
             <option value="Nissan">Nissan</option>
             <option value="Mazda">Mazda</option>
@@ -61,6 +61,21 @@ export default {
 }
 </script>
 <style media="screen">
+@font-face{
+    font-family: "Gotham Pro";
+    src: local("Gotham Pro Bold"), url("http://carvisor.co.nz/assets/fonts/GothaProBol.woff") format("woff");
+    font-style: normal;
+    font-weight: bold;
+}
+@font-face{
+    font-family: "Gotham Pro Light";
+    src: local("Gotham Pro Light"), url("http://carvisor.co.nz/assets/fonts/GothaProLig.woff") format("woff");
+    font-style: normal;
+}
+.select2-results
+{
+  font-family: 'Gotham Pro Light', Arial, sans-serif;
+}
 .but select{
   height: 100%!important;
 }
@@ -154,7 +169,8 @@ export default {
   -webkit-transition: transform 2s ease;
   -moz-transition: transform 2s ease;
   -o-transition: transform 2s ease;
-  transition: transform 2s ease
+  transition: transform 2s ease;
+  display:none;
 }
 .select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b,
 .collapsible-header.active .pseudo-selection-arrow b
@@ -169,7 +185,10 @@ export default {
 }
 .select2-results__options li {
   font-size: 13px;
-  border-bottom: 1px solid #f0f2f5
+  border-bottom: 1px solid #f0f2f5;
+  padding-left: 15px;
+  font-weight:400;
+  color:rgb(85, 85, 85);
 }
 .select2-dropdown{
   border: 1px solid #ddd;
@@ -178,6 +197,17 @@ export default {
 }
 .select2.select2-container.select2-container--default.select2-container--below.select2-container--open.select2-container--focus{
   border-bottom: 1px solid #aaa !important;
+}
+.select2-selection__arrow i{
+  vertical-align: text-bottom;
+  margin-bottom:21px;
+  -webkit-text-stroke: 1px white;
+  color:#767676;
+}
+.select2.select2-container.select2-container--default:hover ,
+.select2.select2-container.select2-container--default:hover .select2-selection__placeholder,
+.select2.select2-container.select2-container--default:hover i{
+  color: #484848 !important;
 }
 </style>
 <style lang="css" scoped>
