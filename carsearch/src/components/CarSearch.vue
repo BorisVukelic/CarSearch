@@ -1,7 +1,7 @@
 <template lang="html">
   <div class="Root">
     <div id="wraper">
-        <div class="but but1">
+        <div class="but but1" @click="menjaj">
           <select class="js-example-basic-single" name="MAKE">
             <option></option>
             <option>MAKE</option>
@@ -56,6 +56,13 @@ export default {
   methods:{
     backToDefault:function(){
       console.log('aaaa');
+    },
+    menjaj:function(){
+      console.log('promenjeno');
+      document.querySelector('.select2-selection__placeholder').remove();
+      document.querySelector('.select2-selection__rendered').appendChild(document.querySelector('.select2-search__field'));
+      document.querySelector('.select2-search__field').style = 'max-width:80px;border-width:0px;';
+      document.querySelector('.select2-search__field').setAttribute("placeholder", "MAKE");
     }
   }
 }
@@ -72,7 +79,7 @@ export default {
     src: local("Gotham Pro Light"), url("http://carvisor.co.nz/assets/fonts/GothaProLig.woff") format("woff");
     font-style: normal;
 }
-.select2-results
+.select2-results, .select2
 {
   font-family: 'Gotham Pro Light', Arial, sans-serif;
 }
@@ -208,6 +215,12 @@ export default {
 .select2.select2-container.select2-container--default:hover .select2-selection__placeholder,
 .select2.select2-container.select2-container--default:hover i{
   color: #484848 !important;
+}
+.select2-selection__placeholder{
+  font-size: 14px;
+  color:rgb(118, 118, 118)!important;
+  font-weight: 600 !important;
+  letter-spacing: 1px;
 }
 </style>
 <style lang="css" scoped>
