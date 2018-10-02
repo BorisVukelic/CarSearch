@@ -1,9 +1,8 @@
 <template lang="html">
   <div class="Root">
     <div id="wraper">
-        <div class="but but1" @click="menjaj">
-          <select class="js-example-basic-single" name="MAKE">
-            <option></option>
+         <div class="but but1">
+          <select id="butt0" class="select2 mySelect0" name="MAKE">
             <option>MAKE</option>
             <option value="Toyota">Toyota</option>
             <option value="Nissan">Nissan</option>
@@ -15,31 +14,31 @@
           </select>
         </div>
         <div class="but but2">
-          <select class="js-example-basic-single" name="MODEL">
+          <select id="butt1" class="select2 mySelect1" name="MODEL">
             <option value="AL">MODEL</option>
             <option value="WY">Wyoming</option>
           </select>
         </div>
         <div class="but but3">
-          <select class="js-example-basic-single" name="BODY_TYPE">
+          <select id="butt2" class="select2 mySelect2" name="BODY_TYPE">
             <option value="AL">BODY TYPE</option>
             <option value="WY">Wyoming</option>
           </select>
         </div>
         <div class="but but4">
-          <select class="js-example-basic-single" name="PRICE">
+          <select id="butt3" class="select2 mySelect3" name="PRICE">
             <option value="AL">PRICE</option>
             <option value="WY">Wyoming</option>
           </select>
         </div>
         <div class="but but5">
-          <select class="js-example-basic-single" name="YEAR">
+          <select id="butt4" class="select2 mySelect4" name="YEAR">
             <option value="AL">YEAR</option>
             <option value="WY">Wyoming</option>
           </select>
         </div>
         <div class="but but6">
-          <select class="js-example-basic-single" name="LOCATION">
+          <select id="butt5" class="select2 mySelect5" name="LOCATION">
             <option value="AL">LOCATION</option>
             <option value="WY">Wyoming</option>
           </select>
@@ -54,16 +53,21 @@
 <script>
 export default {
   methods:{
-    backToDefault:function(){
-      console.log('aaaa');
-    },
-    menjaj:function(){
-      console.log('promenjeno');
-      document.querySelector('.select2-selection__placeholder').remove();
-      document.querySelector('.select2-selection__rendered').appendChild(document.querySelector('.select2-search__field'));
-      document.querySelector('.select2-search__field').style = 'max-width:80px;border-width:0px;';
-      document.querySelector('.select2-search__field').setAttribute("placeholder", "MAKE");
+    changeCss: function(){
+      document.querySelector('.select2-search__field').style = 'border: 1px solid black;';
     }
+    // backToDefault:function(){
+    //   console.log('aaaa');
+    // },
+    // menjaj:function(e){
+    //   console.log('promenjeno');
+    //   document.querySelector('.fas.fa-angle-down').style = "transform: rotate(180deg);transition-duration: .25s;";
+    //   document.querySelector('.select2-selection__placeholder').remove();
+    //   document.querySelector('.select2-selection__rendered').appendChild(document.querySelector('.select2-search__field'));
+    //   document.querySelector('.select2-search__field').style = 'max-width:80px;border-width:0px;';
+    //   document.querySelector('.select2-search__field').setAttribute("placeholder", "MAKE");
+    //   document.querySelector('.select2-search.select2-search--dropdown').style='padding:0px;';
+    // }
   }
 }
 </script>
@@ -173,17 +177,7 @@ export default {
 .select2-container--default .select2-selection--single .select2-selection__arrow b,
 .pseudo-selection-arrow b
 {
-  -webkit-transition: transform 2s ease;
-  -moz-transition: transform 2s ease;
-  -o-transition: transform 2s ease;
-  transition: transform 2s ease;
   display:none;
-}
-.select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b,
-.collapsible-header.active .pseudo-selection-arrow b
-{
-  -webkit-transform: rotate(90deg);
-  transform: rotate(90deg);
 }
 .select2-container--default .select2-results__option--highlighted[aria-selected] {
   background-color: #f0f2f5;
@@ -212,15 +206,63 @@ export default {
   color:#767676;
 }
 .select2.select2-container.select2-container--default:hover ,
-.select2.select2-container.select2-container--default:hover .select2-selection__placeholder,
+.select2.select2-container.select2-container--default:hover .select2-selection__rendered,
 .select2.select2-container.select2-container--default:hover i{
   color: #484848 !important;
 }
-.select2-selection__placeholder{
+.select2-selection__rendered{
   font-size: 14px;
   color:rgb(118, 118, 118)!important;
   font-weight: 600 !important;
   letter-spacing: 1px;
+}
+input::placeholder {
+  font-size: 14px;
+  color:rgb(118, 118, 118)!important;
+  font-weight: 600 !important;
+  letter-spacing: 1px;
+  font-family: 'Gotham Pro Light', Arial, sans-serif;
+}
+.butt0.select2-dropdown.select2-dropdown--below,
+.butt1.select2-dropdown.select2-dropdown--below,
+.butt5.select2-dropdown.select2-dropdown--below{
+  margin-top: -70px;
+  background: transparent;
+  border-top-left-radius: 5px;
+}
+.butt5 .select2-dropdown.select2-dropdown--below,
+.butt1 .select2-dropdown.select2-dropdown--below{
+  margin-top: -70px;
+  background: transparent;
+  border-top-left-radius: 0px;
+}
+.butt0 .select2-search.select2-search--dropdown,
+.butt5 .select2-search.select2-search--dropdown,
+.butt1 .select2-search.select2-search--dropdown{
+  border: 0px solid transparent;
+  border-top: 1px solid rgb(221, 221, 221);
+  border-top-left-radius: 5px;
+  height: 60px;
+  padding-right: 25%;
+  /* background-color: rgba(255, 255, 255,0.4); */
+  background: transparent;
+  border-bottom: 2px solid rgb(170, 170, 170);
+}
+.butt0 .select2-search__field,
+.butt5 .select2-search__field,
+.butt1 .select2-search__field{
+  border: 0px solid transparent !important;
+  height: 100%;
+  width: 100%;
+  /* background: transparent; */
+  background-color: rgba(255, 255, 255,0.4);
+  padding-left: 15px !important;
+}
+.butt0 .select2-results,
+.butt5 .select2-results,
+.butt1 .select2-results{
+  margin-top: -1px;
+  background: white;
 }
 </style>
 <style lang="css" scoped>
