@@ -98,6 +98,7 @@
           </div>
         </div>
         <label @click='moreFilters = !moreFilters'>{{moreFiltersLabel()}}</label>
+        <p>pusi ga strajo </p>
       </div>
 </template>
 
