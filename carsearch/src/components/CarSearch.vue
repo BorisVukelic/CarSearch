@@ -15,31 +15,31 @@
         </div>
         <div class="but but2">
           <select id="butt1" class="select2 mySelect1" name="MODEL">
-            <option value="AL">MODEL</option>
+            <option value="MODEL">MODEL</option>
             <option value="WY">Wyoming</option>
           </select>
         </div>
         <div class="but but3">
           <select id="butt2" class="select2 mySelect2" name="BODY_TYPE">
-            <option value="AL">BODY TYPE</option>
+            <option value="BODY TYPE">BODY TYPE</option>
             <option value="WY">Wyoming</option>
           </select>
         </div>
         <div class="but but4">
           <select id="butt3" class="select2 mySelect3" name="PRICE">
-            <option value="AL">PRICE</option>
+            <option value="PRICE">PRICE</option>
             <option value="WY">Wyoming</option>
           </select>
         </div>
         <div class="but but5">
           <select id="butt4" class="select2 mySelect4" name="YEAR">
-            <option value="AL">YEAR</option>
+            <option value="YEAR">YEAR</option>
             <option value="WY">Wyoming</option>
           </select>
         </div>
         <div class="but but6">
           <select id="butt5" class="select2 mySelect5" name="LOCATION">
-            <option value="AL">LOCATION</option>
+            <option value="LOCATION">LOCATION</option>
             <option value="WY">Wyoming</option>
           </select>
         </div>
@@ -47,27 +47,78 @@
           <button type="button" class="searchButton" name="SEARCH">SEARCH</button>
         </div>
       </div>
-  </div>
+      <div id="wraper2" v-show="moreFilters">
+           <div class="but but1">
+            <select id="butt6" class="select2 mySelect6" name="MAKE">
+              <option>MAKE</option>
+              <option value="Toyota">Toyota</option>
+              <option value="Nissan">Nissan</option>
+              <option value="Mazda">Mazda</option>
+              <option value="Honda">Honda</option>
+              <option value="Ford">Ford</option>
+              <option value="Bmw">Bmw</option>
+              <option value="Subaru">Subaru</option>
+            </select>
+          </div>
+          <div class="but but2">
+            <select id="butt7" class="select2 mySelect7" name="MODEL">
+              <option value="MODEL">MODEL</option>
+              <option value="WY">Wyoming</option>
+            </select>
+          </div>
+          <div class="but but3">
+            <select id="butt8" class="select2 mySelect8" name="BODY_TYPE">
+              <option value="BODY TYPE">BODY TYPE</option>
+              <option value="WY">Wyoming</option>
+            </select>
+          </div>
+          <div class="but but4">
+            <select id="butt9" class="select2 mySelect9" name="PRICE">
+              <option value="PRICE">PRICE</option>
+              <option value="WY">Wyoming</option>
+            </select>
+          </div>
+          <div class="but but5">
+            <select id="butt10" class="select2 mySelect10" name="YEAR">
+              <option value="YEAR">YEAR</option>
+              <option value="WY">Wyoming</option>
+            </select>
+          </div>
+          <div class="but but6">
+            <select id="butt11" class="select2 mySelect11" name="LOCATION">
+              <option value="LOCATION">LOCATION</option>
+              <option value="WY">Wyoming</option>
+            </select>
+          </div>
+          <div class="but but7">
+            <select id="butt12" class="select2 mySelect12" name="BODY_TYPE">
+              <option value="BODY TYPE">BODY TYPE</option>
+              <option value="WY">Wyoming</option>
+            </select>
+          </div>
+        </div>
+        <label @click='moreFilters = !moreFilters'>{{moreFiltersLabel()}}</label>
+      </div>
 </template>
 
 <script>
 export default {
+  data: function(){
+    return{
+      moreFilters:false
+    }
+  },
   methods:{
     changeCss: function(){
       document.querySelector('.select2-search__field').style = 'border: 1px solid black;';
+    },
+    moreFiltersLabel: function(){
+      if(this.moreFilters){
+        return 'LESS FILTERS'
+      }else{
+        return 'MORE FILTERS'
+      }
     }
-    // backToDefault:function(){
-    //   console.log('aaaa');
-    // },
-    // menjaj:function(e){
-    //   console.log('promenjeno');
-    //   document.querySelector('.fas.fa-angle-down').style = "transform: rotate(180deg);transition-duration: .25s;";
-    //   document.querySelector('.select2-selection__placeholder').remove();
-    //   document.querySelector('.select2-selection__rendered').appendChild(document.querySelector('.select2-search__field'));
-    //   document.querySelector('.select2-search__field').style = 'max-width:80px;border-width:0px;';
-    //   document.querySelector('.select2-search__field').setAttribute("placeholder", "MAKE");
-    //   document.querySelector('.select2-search.select2-search--dropdown').style='padding:0px;';
-    // }
   }
 }
 </script>
@@ -118,7 +169,7 @@ export default {
   padding: 21px 10px;
 }
 .but .select2-selection__arrow{
-  padding: 21px 10px;
+  padding: 21px 0px 21px 10px;
 }
 .searchButton{
   width: 100%;
@@ -131,6 +182,13 @@ export default {
   border-bottom-left-radius: 0px ;
   border:0px solid white;
   padding-top: 2px;
+}
+.but7 .select2-selection--single{
+  border-color: rgb(221, 221, 221);
+  border-top-right-radius: 5px ;
+  border-bottom-right-radius: 5px ;
+  border-top-left-radius: 0px ;
+  border-bottom-left-radius: 0px ;
 }
 @media only screen and (max-width: 1110px){
   .but1 .select2-selection--single{
@@ -151,6 +209,9 @@ export default {
   .searchButton{
     border-top-right-radius: 0px ;
   }
+  .but7 .select2-selection--single{
+    border-top-right-radius: 0px ;
+  }
 }
 @media only screen and (max-width: 798px){
   .but1 .select2-selection--single{
@@ -168,6 +229,9 @@ export default {
     border-bottom-width: 0px;
   }
   .searchButton{
+    border-bottom-left-radius: 5px ;
+  }
+  .but7 .select2-selection--single{
     border-bottom-left-radius: 5px ;
   }
 }
@@ -274,7 +338,7 @@ input::placeholder {
   border-bottom-color: #f0f2f5;
   color: #555;
 }
-#wraper{
+#wraper,#wraper2{
   display: grid;
   margin-top: 40px;
   grid-template-columns: repeat(55,1fr);
@@ -334,7 +398,7 @@ input::placeholder {
 .but7{
   grid-column: 42/56 ;
 }
-#wraper{
+#wraper,#wraper2{
   width:780px;
 }
 
@@ -362,7 +426,7 @@ input::placeholder {
 .but7{
   grid-column: 1/56 ;
 }
-#wraper{
+#wraper,#wraper2{
   width:350px;
 }
 }

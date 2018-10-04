@@ -16,28 +16,42 @@
       $(document).ready(function() {
         var list = $('.select2');
         for(var i=0 ; i<list.length ; i++){
+        if(list.eq(''+i+'').val()=='BODY TYPE'){
+          list.eq(''+i+'').select2({
+            width:'100%',
+            dropdownCssClass:'butt'+i+'',
+            minimumResultsForSearch: -1
+          });
+        }else{
         list.eq(''+i+'').select2({
           width:'100%',
           dropdownCssClass:'butt'+i+''
         });
       }
-        $('.select2-selection__arrow').append("<i class='fas fa-angle-down arrowIcon'></i>");
-          $('.select2').on('select2:open', function (e) {
-            var el = e.target.id;
-            var querya = $('#'+el+'+ span .arrowIcon');
-            console.log(querya);
-            $(querya).css('transform','rotate(180deg)');
-            $(querya).css('transition-duration','.25s');
-        });
-          $('.select2').on('select2:close', function (e) {
-            console.log('aaa');
-            var el = e.target.id;
-            var querya = $('#'+el+'+ span .arrowIcon');
-            $(querya).css('transform','rotate(0deg)');
-            $(querya).css('transition-duration','.25s');
-        });
-
+      }
+      $('.select2-selection__arrow').append("<i class='fas fa-angle-down arrowIcon'></i>");
+      $('.select2').on('select2:open', function (e) {
+        var el = e.target.id;
+        var querya = $('#'+el+'+ span .arrowIcon');
+        $(querya).css('transform','rotate(180deg)');
+        $(querya).css('transition-duration','.25s');
+        document.querySelector(".select2-search__field").style='transition: background-color 0.33s ease;background-color:rgba(255,255,255,0.4)';
+        document.querySelector(".select2-search__field").onkeyup = function(e) {
+          if(e.target.value.length >= 1){
+            e.target.style='transition: background-color 0.33s ease;background-color:rgba(255,255,255,1)';
+            console.log(e.target.value.length);
+          }else{
+            e.target.style='transition: background-color 0.33s ease;background-color:rgba(255,255,255,0.4)';
+          }
+        };
       });
+      $('.select2').on('select2:close', function (e) {
+        var el = e.target.id;
+        var querya = $('#'+el+'+ span .arrowIcon');
+        $(querya).css('transform','rotate(0deg)');
+        $(querya).css('transition-duration','.25s');
+      });
+    });
     </script>
 
   </head>
