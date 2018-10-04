@@ -8,7 +8,7 @@
             <option value="Nissan">Nissan</option>
             <option value="Mazda">Mazda</option>
             <option value="Honda">Honda</option>
-            <option value="Ford">Ford</option>
+            <option value="Ford">Subaru</option>
             <option value="Bmw">Bmw</option>
             <option value="Subaru">Subaru</option>
           </select>
