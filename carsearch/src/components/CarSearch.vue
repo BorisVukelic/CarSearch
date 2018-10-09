@@ -49,8 +49,8 @@
       </div>
       <div id="wraper2" v-show="moreFilters">
            <div class="but but1">
-            <select id="butt6" class="select2 mySelect6" name="MAKE">
-              <option>MAKE</option>
+            <select id="butt6" class="select2 mySelect6" name="FUEL_TYPE">
+              <option>FUEL TYPE</option>
               <option value="Toyota">Toyota</option>
               <option value="Nissan">Nissan</option>
               <option value="Mazda">Mazda</option>
@@ -61,44 +61,43 @@
             </select>
           </div>
           <div class="but but2">
-            <select id="butt7" class="select2 mySelect7" name="MODEL">
-              <option value="MODEL">MODEL</option>
+            <select id="butt7" class="select2 mySelect7" name="ODOMETER">
+              <option value="ODOMETER">ODOMETER</option>
               <option value="WY">Wyoming</option>
             </select>
           </div>
           <div class="but but3">
-            <select id="butt8" class="select2 mySelect8" name="BODY_TYPE">
-              <option value="BODY TYPE">BODY TYPE</option>
+            <select id="butt8" class="select2 mySelect8" name="ENGINE SIZE">
+              <option value="ENGINE SIZE">ENGINE SIZE</option>
               <option value="WY">Wyoming</option>
             </select>
           </div>
           <div class="but but4">
-            <select id="butt9" class="select2 mySelect9" name="PRICE">
-              <option value="PRICE">PRICE</option>
+            <select id="butt9" class="select2 mySelect9" name="COLOR">
+              <option value="COLOR">COLOR</option>
               <option value="WY">Wyoming</option>
             </select>
           </div>
           <div class="but but5">
-            <select id="butt10" class="select2 mySelect10" name="YEAR">
-              <option value="YEAR">YEAR</option>
+            <select id="butt10" class="select2 mySelect10" name="TRANSMISSION">
+              <option value="TRANSMISSION">TRANSMISSION</option>
               <option value="WY">Wyoming</option>
             </select>
           </div>
           <div class="but but6">
-            <select id="butt11" class="select2 mySelect11" name="LOCATION">
-              <option value="LOCATION">LOCATION</option>
+            <select id="butt11" class="select2 mySelect11" name="NUMBER_OF_DOORS">
+              <option value="NUMBER OF DOORS">NUMBER OF DOORS</option>
               <option value="WY">Wyoming</option>
             </select>
           </div>
           <div class="but but7">
-            <select id="butt12" class="select2 mySelect12" name="BODY_TYPE">
-              <option value="BODY TYPE">BODY TYPE</option>
+            <select id="butt12" class="select2 mySelect12" name="SELLER_TYPE">
+              <option value="SELLER TYPE">SELLER TYPE</option>
               <option value="WY">Wyoming</option>
             </select>
           </div>
         </div>
         <label @click='moreFilters = !moreFilters'>{{moreFiltersLabel()}}</label>
-        <p>pusi ga strajo </p>
       </div>
 </template>
 
@@ -110,9 +109,6 @@ export default {
     }
   },
   methods:{
-    changeCss: function(){
-      document.querySelector('.select2-search__field').style = 'border: 1px solid black;';
-    },
     moreFiltersLabel: function(){
       if(this.moreFilters){
         return 'LESS FILTERS'
@@ -288,22 +284,23 @@ input::placeholder {
   letter-spacing: 1px;
   font-family: 'Gotham Pro Light', Arial, sans-serif;
 }
-.butt0.select2-dropdown.select2-dropdown--below,
-.butt1.select2-dropdown.select2-dropdown--below,
-.butt5.select2-dropdown.select2-dropdown--below{
+.butt0.select2-dropdown.select2-dropdown--below
+{
   margin-top: -70px;
   background: transparent;
   border-top-left-radius: 5px;
 }
-.butt5 .select2-dropdown.select2-dropdown--below,
-.butt1 .select2-dropdown.select2-dropdown--below{
+.butt5.select2-dropdown.select2-dropdown--below,
+.butt1.select2-dropdown.select2-dropdown--below,
+.butt9.select2-dropdown.select2-dropdown--below{
   margin-top: -70px;
   background: transparent;
-  border-top-left-radius: 0px;
+  border-top-left-radius: 0px ;
 }
 .butt0 .select2-search.select2-search--dropdown,
 .butt5 .select2-search.select2-search--dropdown,
-.butt1 .select2-search.select2-search--dropdown{
+.butt1 .select2-search.select2-search--dropdown,
+.butt9 .select2-search.select2-search--dropdown{
   border: 0px solid transparent;
   border-top: 1px solid rgb(221, 221, 221);
   border-top-left-radius: 5px;
@@ -315,7 +312,8 @@ input::placeholder {
 }
 .butt0 .select2-search__field,
 .butt5 .select2-search__field,
-.butt1 .select2-search__field{
+.butt1 .select2-search__field,
+.butt9 .select2-search__field{
   border: 0px solid transparent !important;
   height: 100%;
   width: 100%;
@@ -325,9 +323,24 @@ input::placeholder {
 }
 .butt0 .select2-results,
 .butt5 .select2-results,
-.butt1 .select2-results{
+.butt1 .select2-results,
+.butt9 .select2-results{
   margin-top: -1px;
   background: white;
+}
+input[type=search]:not(.browser-default):focus:not([readonly]){
+  border-bottom: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.select2-search.select2-search--dropdown{
+  height: 71px !important;
+}
+.select2-search__field{
+  height: 58px !important;
+}
+.fas.fa-angle-down.arrowIcon{
+  margin-left: -10px;
 }
 </style>
 <style lang="css" scoped>

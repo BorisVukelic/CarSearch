@@ -6,6 +6,10 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.1/js/select2.full.js"></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script> -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
@@ -16,7 +20,8 @@
       $(document).ready(function() {
         var list = $('.select2');
         for(var i=0 ; i<list.length ; i++){
-        if(list.eq(''+i+'').val()=='BODY TYPE'){
+        if(list.eq(''+i+'').val()=='BODY TYPE' || list.eq(''+i+'').val()=='FUEL TYPE' || list.eq(''+i+'').val()=='TRANSMISSION' ||
+        list.eq(''+i+'').val()=='NUMBER OF DOORS' || list.eq(''+i+'').val()=='SELLER TYPE'){
           list.eq(''+i+'').select2({
             width:'100%',
             dropdownCssClass:'butt'+i+'',
