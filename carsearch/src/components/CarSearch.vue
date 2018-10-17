@@ -1,5 +1,6 @@
 <template lang="html">
   <div class="Root">
+    
     <div id="wraper">
          <div class="but but1">
           <select id="butt0" class="select2 mySelect0" name="MAKE">
@@ -49,56 +50,98 @@
       </div>
       <div id="wraper2" v-show="moreFilters">
            <div class="but but1">
-            <select id="butt6" class="select2 mySelect6" name="MAKE">
-              <option>MAKE</option>
-              <option value="Toyota">Toyota</option>
-              <option value="Nissan">Nissan</option>
-              <option value="Mazda">Mazda</option>
-              <option value="Honda">Honda</option>
-              <option value="Ford">Ford</option>
-              <option value="Bmw">Bmw</option>
-              <option value="Subaru">Subaru</option>
+            <select id="butt6" class="select2 mySelect6" name="FUEL_TYPE">
+              <option disabled selected>FUEL TYPE</option>
+              <option value="Any">Any</option>
+              <option value="Petrol">Petrol</option>
+              <option value="Disel">Disel</option>
+              <option value="Hybrid">Hybrid</option>
+              <option value="Electric">Electric</option>
+              <option value="CNG">CNG</option>
+              <option value="LPG">LPG</option>
+              <option value="Alternative">Alternative</option>
             </select>
-          </div>
-          <div class="but but2">
-            <select id="butt7" class="select2 mySelect7" name="MODEL">
-              <option value="MODEL">MODEL</option>
-              <option value="WY">Wyoming</option>
-            </select>
-          </div>
+          </div >
+          
+          <!-- ch -->
+         
+           <ul class="collapsible but2">
+             <li>
+              <div class="collapsible-header">ODOMETER</div>
+                <div class="collapsible-body">
+                
+                <div class="rangeMe">
+                    <!-- INPUT SLIDER -->
+                     <div id="slider"></div>
+                     
+                       <!-- <input type="range" id="start" name="volume" min="0" max="11" /> -->
+                    <!-- INPUT SLIDER -->
+                </div>
+                  <div class="clearMe">
+                    <a class="black-link" href="#">Clear</a>
+                  </div>
+                </div>
+                
+              </li>
+            </ul>  
+         
+            <!-- ch -->
+          
+     
+     
           <div class="but but3">
-            <select id="butt8" class="select2 mySelect8" name="BODY_TYPE">
-              <option value="BODY TYPE">BODY TYPE</option>
-              <option value="WY">Wyoming</option>
+            <select id="butt8" class="select2 mySelect8" name="ENGINE_SIZE">
+              <option value="ENGINE SIZE">ENGINE SIZE</option>
+              <option value="WY">SLAJDER ZA CCM</option>
             </select>
           </div>
           <div class="but but4">
-            <select id="butt9" class="select2 mySelect9" name="PRICE">
-              <option value="PRICE">PRICE</option>
-              <option value="WY">Wyoming</option>
+            <select id="butt9" class="select2 mySelect9" name="COLOR">
+              <option value="COLOR">COLOR</option>
+              <option value="WY">Any</option>
+              <option value="Beige">Beige</option>
+              <option value="Black">Black</option>
+              <option value="Blue">Blue</option>
+              <option value="Brown">Brown</option>
+              <option value="Gold">Gold</option>
+              <option value="Green">Green</option>
+              <option value="Gray">Gray</option>
+              <option value="Orange">Orange</option>
+              <option value="Purple">Purple</option>
+              <option value="Red">Red</option>
+              <option value="Silver">Silver</option>
+              <option value="White">White</option>
+              <option value="Yellow">Yellow</option>
             </select>
           </div>
           <div class="but but5">
-            <select id="butt10" class="select2 mySelect10" name="YEAR">
-              <option value="YEAR">YEAR</option>
-              <option value="WY">Wyoming</option>
+            <select id="butt10" class="select2 mySelect10" name="TRANSMISSION">
+              <option value="TRANSMISSION">TRANSMISSION</option>
+              <option value="Any">Any</option>
+              <option value="Automatic">Automatic</option>
+              <option value="Manual">Manual</option>
+              <option value="Tiptronic">Tiptronic</option>
             </select>
           </div>
           <div class="but but6">
-            <select id="butt11" class="select2 mySelect11" name="LOCATION">
-              <option value="LOCATION">LOCATION</option>
-              <option value="WY">Wyoming</option>
+            <select id="butt11" class="select2 mySelect11" name="NUMBER_OF_DOORS">
+              <option value="NUMBER_OF_DOORS">NUMBER OF DOORS</option>
+              <option value="2doors">2 doors</option>
+              <option value="4doors">4 doors</option>
+              <option value="5doors">5 doors</option>
             </select>
           </div>
           <div class="but but7">
-            <select id="butt12" class="select2 mySelect12" name="BODY_TYPE">
-              <option value="BODY TYPE">BODY TYPE</option>
-              <option value="WY">Wyoming</option>
+            <select id="butt12" class="select2 mySelect12" name="SELLER_TYPE">
+              <option value="SELLER_TYPE">SELLER TYPE</option>
+              <option value="Any">Any</option>
+              <option value="private">Private seller</option>
+              <option value="dealer">Dealer</option>
+              
             </select>
           </div>
         </div>
         <label @click='moreFilters = !moreFilters'>{{moreFiltersLabel()}}</label>
-        <p>pusi ga strajo </p>
       </div>
 </template>
 
@@ -329,7 +372,65 @@ input::placeholder {
   margin-top: -1px;
   background: white;
 }
+
+.noUi-target{
+  background:#ddd;
+  height:3px;
+  border:none;
+}
+.noUi-connect {
+    background: rgb(243, 0, 95);
+}
+.noUi-handle {
+    /* position: absolute;
+    width: 10px;
+    height: 10px;
+    left: 201px!important;
+    right: 3px!important;
+    top: -3px;
+    border-radius: 20px;
+    background: rgb(243, 0, 95);
+    border-color: rgb(243, 0, 95);
+    */
+    transition-duration: 300ms;
+    border: none;
+    background: rgb(243, 0, 95);
+    box-shadow:none;
+    -webkit-box-shadow:none;
+    border-radius:15px;
+    width: 10px!important;
+    height:10px!important;
+    
+}
+.noUi-horizontal .noUi-handle {
+    top:-3px;
+}
+.noUi-handle:before, .noUi-handle:after {
+   content:none;
+}
+html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
+    right: -5px;
+    left: auto;
+}
+.noUi-active.noUi-handle {
+    border: none;
+    background: rgb(243, 0, 95);
+    box-shadow:none;
+    -webkit-box-shadow:none;
+    border-radius:15px;
+    width: 16px!important;
+    height:16px!important;
+    top:-6px;
+    right: -6px!important;
+    transition-duration: 100ms;
+}
+.collapsible-header i{
+  text-align: right;
+}
 </style>
+
+
+
 <style lang="css" scoped>
 :focus {
     outline:none;
@@ -346,7 +447,7 @@ input::placeholder {
   grid-auto-rows: 70px;
   margin: 40px auto;
   width:90%;
-  overflow-y: hidden;
+ 
   box-shadow:rgb(240, 240, 240) 0px 0px 13px 0px;
 }
 .but{
@@ -431,4 +532,76 @@ input::placeholder {
   width:350px;
 }
 }
+
+
+/* MOCA */
+
+.collapsible.but2{
+  margin: 0px;
+  height: 70px;
+  webkit-box-shadow:none;
+  box-shadow: none;
+  border-right: 0px;
+
+}
+.collapsible-header{
+  text-align: left;
+  line-height:41px;
+  height: 69px;
+  display: block;
+  padding-left: 18px;
+  padding-right: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 14px;
+  color: rgb(118, 118, 118)!important;
+  font-weight: 600 !important;
+  letter-spacing: 1px;
+  font-family: 'Gotham Pro Light', Arial, sans-serif;
+  border-bottom: 1px solid #ddd;
+  transition-property: border-bottom;
+  transition-delay: 300ms;
+}
+.active .collapsible-header{
+border-bottom: 0px;
+}
+.collapsible-body{
+  border: 1px solid #ddd;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius:5px;
+  padding: 0px;
+  border-top: none;
+  margin-left: -1px;
+  margin-right: -1px;
+  z-index: 1; 
+}
+.clearMe{
+    line-height: 20px;
+    padding: 0 14px;
+    padding-bottom: .75rem;
+    position: relative;
+    text-align:left;
+    
+}
+.clearMe a{
+  font-family: "Gotham Pro";
+  color: #767676;
+}
+.rangeMe{
+  padding: 12px 21px 0px 19px;
+  margin-bottom:30px;
+}
+.collapsible li.active {
+    -webkit-box-shadow: rgb(240, 240, 240) 0px 0px 13px 0px; 
+     box-shadow: rgb(240, 240, 240) 0px 0px 13px 0px; 
+     background:white;
+}
+.collapsible li{
+    -webkit-box-shadow: rgb(240, 240, 240) 0px 0px 13px 0px; 
+     box-shadow: rgb(240, 240, 240) 0px 0px 13px 0px; 
+     background:white;
+}
+
+
 </style>

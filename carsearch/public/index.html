@@ -6,6 +6,17 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.1/js/select2.full.js"></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script> -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">       
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/12.0.0/nouislider.css" />
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/12.0.0/nouislider.js"></script>
+    
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
@@ -30,6 +41,7 @@
       }
       }
       $('.select2-selection__arrow').append("<i class='fas fa-angle-down arrowIcon'></i>");
+      $('.collapsible-header').append("<i class='fas fa-angle-down arrowIcon'></i>");
       $('.select2').on('select2:open', function (e) {
         var el = e.target.id;
         var querya = $('#'+el+'+ span .arrowIcon');
@@ -51,7 +63,27 @@
         $(querya).css('transform','rotate(0deg)');
         $(querya).css('transition-duration','.25s');
       });
-    });
+
+      $(document).ready(function(){
+     $('.collapsible').collapsible();
+      });
+      
+      var slider = document.getElementById('slider');
+
+      noUiSlider.create(slider, {
+      start: [0, 300000],
+      connect: true,
+      range: {
+          'min': 0,
+          'max': 300000
+          },
+      step: 
+          1000,
+      start:
+           [10000, 290000],
+      });
+
+      });
     </script>
 
   </head>
